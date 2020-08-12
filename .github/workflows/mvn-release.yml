@@ -28,7 +28,7 @@ jobs:
             os: macos-latest
             target-path: darwin
           - platform: linux
-            os: ubuntu-20.04
+            os: ubuntu-16.04
           - platform: linux
             arch: aarch64
             extra-packages: gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
@@ -36,7 +36,7 @@ jobs:
             arch: x86
             extra-packages: gcc-multilib g++-multilib
           - platform: win32
-            os: ubuntu-20.04
+            os: ubuntu-16.04
             extra-packages: mingw-w64
     steps:
       - uses: actions/checkout@v2
@@ -64,7 +64,7 @@ jobs:
           name: native-images.zip
           path: leveldb-jna-native/src/main/resources/*
   build-core:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-16.04
     needs: [build-native]
     steps:
       - uses: actions/checkout@v2
